@@ -1,5 +1,4 @@
-// 200c01ba
-$('#search-button').on('click', function(){
+function searchMovies(){
     $('#movie-list').html('');
 
     $.ajax({
@@ -39,4 +38,15 @@ $('#search-button').on('click', function(){
             }
         }
     });
+}
+
+$('#search-button').on('click', function(){
+    searchMovies();
+});
+
+$('#search-input').on('keyup',function(e) {
+    // e.which === e.keyCode
+    if(e.which === 13) {
+        alert('You pressed enter!');
+    }
 });
